@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gogoi Computer — DTP, Printing & Online Services</title>
+  <meta name="description" content="Gogoi Computer: Printing, DTP, digital photography, monthly salary/bill prep, school budgets, CSC services, civil works estimates — online & offline." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#00c2a8; /* teal */
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071026 0%, #071226 60%, #06121a 100%);color:#e6eef6;min-height:100vh}
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3ad6c0);display:flex;align-items:center;justify-content:center;font-weight:800;color:#042023;box-shadow:0 6px 18px rgba(2,10,14,0.6)}
+    .logo h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a.cta{background:linear-gradient(90deg,var(--accent),#34d1b4);color:#042023;padding:10px 14px;border-radius:10px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:26px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:14px;backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,10,14,0.6)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--accent);font-weight:700;margin-bottom:12px}
+    h2{margin:6px 0 12px;font-size:32px}
+    p.lead{color:var(--muted);line-height:1.6}
+    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;font-size:14px;color:var(--muted)}
+
+    /* Quick action box */
+    .action{padding:20px;border-radius:12px;background:linear-gradient(180deg,#061426, #04101a);border:1px solid rgba(255,255,255,0.03)}
+    .action h3{margin:0 0 8px}
+    .estimate-row{display:flex;gap:8px;margin-top:10px}
+    .estimate-row input, .estimate-row select{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#39d6bf);color:#042023;font-weight:700;border:none;cursor:pointer}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h4{margin:6px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Portfolio */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+    .photo{height:96px;border-radius:8px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02)}
+
+    /* Contact + footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:26px}
+    form{display:grid;gap:10px}
+    input[type=text], input[type=email], textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:transparent;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .services{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      header{flex-direction:column;align-items:flex-start}
+      .wrap{margin:18px auto;padding:12px}
+    }
+
+    /* small animations */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .6s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">GC</div>
+        <div>
+          <h1>Gogoi Computer</h1>
+          <div class="muted">Printing • DTP • Digital • Online Services</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#estimate">Get Estimate</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card fade-up">
+        <span class="tag">Trusted since 20XX</span>
+        <h2>Printing, DTP & Professional Online Services — Local + Remote</h2>
+        <p class="lead">Gogoi Computer offers end-to-end printing and desktop publishing, digital photography, payroll and budget preparation for schools, CSC services, and civil engineering plan estimates — both offline and online. Fast turnaround, accurate estimates and clear pricing.</p>
+
+        <div class="features">
+          <div class="feature">Fast Turnaround</div>
+          <div class="feature">Accurate Budgeting</div>
+          <div class="feature">CSC & Government Forms</div>
+          <div class="feature">Civil Plan Estimates</div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#estimate">Request Estimate</a>
+          <a style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none" href="#portfolio">View Work</a>
+        </div>
+      </div>
+
+      <aside class="action fade-up">
+        <h3>Quick Estimate</h3>
+        <p class="muted">Tell us the service and rough quantity — we'll reply with a free estimate.</p>
+        <div class="estimate-row">
+          <select id="serviceSelect">
+            <option value="DTP">DTP / Typesetting</option>
+            <option value="Printing">Printing (Flyers, Books)</option>
+            <option value="Photography">Digital Photography</option>
+            <option value="Payroll">Monthly Salary / Payroll</option>
+            <option value="Budget">School Budget Estimate</option>
+            <option value="CSC">CSC Services</option>
+            <option value="Civil">Civil Work Plan Estimate</option>
+          </select>
+          <input id="qty" type="text" placeholder="Quantity / Pages" />
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <input id="name" type="text" placeholder="Your name" />
+          <input id="phone" type="text" placeholder="Phone or email" />
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" onclick="quickEstimate()">Send</button>
+        </div>
+        <p id="estimateResult" class="muted" style="margin-top:8px;font-size:14px"></p>
+      </aside>
+    </section>
+
+    <section id="services" class="fade-up">
+      <h3 style="margin-top:28px">Our Services</h3>
+      <div class="services">
+        <div class="card">
+          <h4>DTP & Graphic Design</h4>
+          <div class="muted">Typesetting, book layout, pamphlets, logos, banners. Files prepared for both print & web.</div>
+        </div>
+        <div class="card">
+          <h4>Printing Services</h4>
+          <div class="muted">Offset and digital printing: flyers, posters, brochures, book binding, lamination and more.</div>
+        </div>
+        <div class="card">
+          <h4>Digital Photography</h4>
+          <div class="muted">Product photos, ID photos, event coverage and editing/retouching.</div>
+        </div>
+        <div class="card">
+          <h4>Payroll & Salary Bills</h4>
+          <div class="muted">Monthly salary statements, payslips, statutory calculations and digital filing support.</div>
+        </div>
+        <div class="card">
+          <h4>School Yearly Budget</h4>
+          <div class="muted">Prepare structured yearly budgets and expenditure estimates for schools and institutions.</div>
+        </div>
+        <div class="card">
+          <h4>CSC & Online Services</h4>
+          <div class="muted">Government forms, registrations, online submissions, scanning & documentation services.</div>
+        </div>
+        <div class="card">
+          <h4>Civil Engineering Estimates</h4>
+          <div class="muted">Offline & online plan estimate preparation: BOQ, cost estimates, material lists and rate analysis.</div>
+        </div>
+        <div class="card">
+          <h4>Plan Printing & Scanning</h4>
+          <div class="muted">Large-format printing (A0/A1) for plans, blueprints and site documents.</div>
+        </div>
+        <div class="card">
+          <h4>Custom Requests</h4>
+          <div class="muted">Don't see it? Tell us your requirement and we'll work out a solution.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h3 style="margin-top:28px">Portfolio</h3>
+      <div class="gallery">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1526312426976-3d0a5f3bb4aa?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1532634896-26909d0d3f1a?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1548095115-45697e73d4d2?auto=format&fit=crop&w=800&q=60')"></div>
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1503481766315-5b6f3a3e0c36?auto=format&fit=crop&w=800&q=60')"></div>
+      </div>
+    </section>
+
+    <section id="estimate" class="contact-grid">
+      <div>
+        <h3 style="margin-top:18px">Detailed Estimate & Booking</h3>
+        <p class="muted">Use the form to request a detailed estimate. For civil plan estimates, attach your drawings or share a link. For payroll & budgets, share the number of employees and frequency.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <input type="text" id="fullname" placeholder="Full name" required />
+          <input type="email" id="email" placeholder="Email (for estimate)" required />
+          <input type="text" id="subject" placeholder="Subject / Service" />
+          <textarea id="message" placeholder="Details: quantities, page counts, attachments link, notes..."></textarea>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="btn" type="submit">Send Request</button>
+            <div class="muted">Or call: +91-8134905790</div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h4>Why choose Gogoi Computer?</h4>
+        <ul class="muted">
+          <li>Clear, itemized estimates</li>
+          <li>Local pickup & delivery options</li>
+          <li>Secure handling of sensitive data</li>
+          <li>Both offline and online delivery for civil estimates</li>
+          <li>Experienced DTP & printing team</li>
+        </ul>
+        <div style="margin-top:12px">
+          <strong>Address</strong>
+          <div class="muted">Prerona Cinema Complex, Bihpuria, Lakhimpur, Assam - India</div>
+          <strong style="margin-top:8px;display:block">Hours</strong>
+          <div class="muted">Mon — Sat: 9:30 AM — 7:30 PM</div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© Gogoi Computer • All rights reserved</div>
+      <div class="muted">Designed for clarity — bipulgg@gmail.com</div>
+    </footer>
+  </div>
+
+  <script>
+    function quickEstimate(){
+      const service = document.getElementById('serviceSelect').value;
+      const qty = document.getElementById('qty').value || '—';
+      const name = document.getElementById('name').value || 'Customer';
+      const contact = document.getElementById('phone').value || '';
+      const result = document.getElementById('estimateResult');
+      // In real implementation, this would POST to server or open mailto. For demo, show friendly message.
+      result.innerText = `Thanks ${name}. We received your quick request for ${service} (qty: ${qty}). We'll contact you at ${contact || 'provided contact'} with a free estimate.`;
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const subj = document.getElementById('subject').value || 'Estimate request';
+      const msg = document.getElementById('message').value;
+      alert('Thank you, ' + name + '! Your request has been recorded. We will reply to ' + email + ' soon.');
+      // Reset form
+      e.target.reset();
+    }
+
+    // Small reveal animation on load
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{el.style.animationDelay = (i*80)+'ms'});
+    });
+  </script>
+</body>
+</html>
